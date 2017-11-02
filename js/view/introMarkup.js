@@ -15,12 +15,11 @@ export default class MarkUp extends AbstractView {
         `;
   }
 
-  bindHandlers() {
-    this.element.querySelector(`.intro__asterisk`).addEventListener(`click`, this.onClick);
-  }
-
-  clearHandlers() {
-    this.element.querySelector(`.intro__asterisk`).removeEventListener(`click`, this.onClick);
+  bind() {
+    this.element.querySelector(`.intro__asterisk`).onclick = (evt) => {
+      evt.preventDefault();
+      this.onClick();
+    };
   }
 
   onClick() {
