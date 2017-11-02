@@ -1,8 +1,6 @@
-const draw = (page) => {
-  let mainElement = document.querySelector(`#main`);
+const mainContainer = document.querySelector(`main.central`);
 
-  mainElement.innerHTML = ``;
-  mainElement.appendChild(page);
+export default (screen) => {
+  mainContainer.innerHTML = ``;
+  mainContainer.appendChild(screen.element);
 };
-
-export default draw;

@@ -1,36 +1,18 @@
-import AbstractView from './abstract-view';
-
+import draw from '../utils/draw.js';
 import Application from '../Application';
+import MarkUp from './introMarkup';
 
-export default () => {
+class Intro {
+  constructor() {
+    this.view = new MarkUp();
+  }
 
-  class Intro extends AbstractView {
-    constructor(data) {
-      super();
-      this.data = data;
-    }
-
-    getMarkup() {
-      return `
-        <div id="intro" class="intro">
-          <h1 class="intro__asterisk">*</h1>
-          <p class="intro__motto"><sup>*</sup>Это не фото. Это рисунок маслом нидерландского художника-фотореалиста Tjalf Sparnaay.</p>
-          </div>
-          `;
-    }
-
-    bindHandlers() {
-      this.element.querySelector(`.intro__asterisk`).addEventListener(`click`, this.onClick);
-    }
-
-    clearHandlers() {
-      this.element.querySelector(`.intro__asterisk`).removeEventListener(`click`, this.onClick);
-    }
-
-    onClick() {
+  init() {
+    draw(this.view);
+    this.view.onClick = () => {
       Application.showGreeting();
-    }
- }
+    };
+  }
+}
 
-  return new Intro().element;
-};
+export default new Intro();
