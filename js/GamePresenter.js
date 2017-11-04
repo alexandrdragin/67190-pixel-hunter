@@ -157,6 +157,4 @@ class GamePresenter {
   }
 }
 
-const gamePresenter = new GamePresenter(model);
-
-export default () => gamePresenter.startGame();
+export default new GamePresenter(model);
