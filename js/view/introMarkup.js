@@ -6,7 +6,7 @@ export default class MarkUp extends AbstractView {
     this.data = data;
   }
 
-  getMarkup() {
+  get getMarkup() {
     return `
       <div id="intro" class="intro">
         <h1 class="intro__asterisk">*</h1>
@@ -15,7 +15,7 @@ export default class MarkUp extends AbstractView {
         `;
   }
 
-  bind() {
+  bindHandlers() {
     this.element.querySelector(`.intro__asterisk`).onclick = (evt) => {
       evt.preventDefault();
       this.onClick();

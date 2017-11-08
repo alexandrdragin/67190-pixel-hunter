@@ -154,7 +154,7 @@ export default class Stats extends AbstractView {
     `);
   }
 
-  getMarkup() {
+  get getMarkup() {
     return `
       ${this.result}
     `;
