@@ -9,7 +9,7 @@ export default class AbstractView {
     throw new Error(`Method getMarkup is not defined`);
   }
 
-  bindHandlers() {
+  bind() {
 
   }
 
@@ -19,8 +19,8 @@ export default class AbstractView {
 
   get element() {
     if (!this._element) {
-      this._element = getElementFromTemplate(this.getMarkup());
-      this.bindHandlers();
+      this._element = getElementFromTemplate(this.getMarkup);
+      this.bind();
     }
 
     return this._element;
