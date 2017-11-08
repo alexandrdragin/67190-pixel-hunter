@@ -1,4 +1,4 @@
-const questsData = {
+export const questsData = {
   base: {
     currentLevel: 0,
     timer: 30,
@@ -252,4 +252,6 @@ const questsData = {
   ]
 };
 
-export default questsData;
+const DATA_URL = `https://es.dump.academy/pixel-hunter/questions`;
+
+export const loaderQuestions = fetch(DATA_URL);

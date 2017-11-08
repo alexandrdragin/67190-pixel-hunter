@@ -5,6 +5,8 @@ import stats from './view/stats';
 
 import gamePresenter from './GamePresenter';
 
+import {loaderQuestions} from './data/questsData';
+
 const ControllerId = {
   INTRO: ``,
   GREETING: `greeting`,
@@ -43,7 +45,18 @@ export default class Application {
       this.changeHash(id, data);
     };
     window.addEventListener(`hashchange`, onHashChange);
-    onHashChange();
+
+    loaderQuestions.then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else if (response.status === 404) {
+        return [];
+      }
+      throw new Error(`Неизвестный статус: ${response.status} ${response.statusText}`);
+    }).then((responseData) => {
+      this.questionList = responseData;
+      onHashChange();
+    });
   }
 
   static changeHash(id, data) {
