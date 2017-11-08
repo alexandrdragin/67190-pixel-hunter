@@ -46,6 +46,7 @@ export default class Application {
   }
 
   static changeHash(id, data) {
+
     const controller = routes[id];
 
     if (controller) {

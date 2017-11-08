@@ -20,6 +20,9 @@ class GamePresenter {
     this.model.updateLives(3);
   }
 
+  init() {
+    this.startGame();
+  }
 
   startGame() {
     if (!this.model._state.questions[this.model._state.base.currentLevel]
