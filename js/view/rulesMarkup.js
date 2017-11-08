@@ -60,8 +60,6 @@ export default class Rules extends AbstractView {
       };
   }
 
-
-
   clearHandlers() {
     this.rulesSubmit.removeEventListener(`click`, this.onClick);
   }

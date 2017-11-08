@@ -17,7 +17,7 @@ export default class GameScreen extends AbstractView {
     this._sendAnswer = sendAnswer;
   }
 
-  getMarkup() {
+  get getMarkup() {
     switch (this.typeOfQuestion) {
       case `two-of-two`:
         this.questBlock = fillQuestionEach(this.question);
