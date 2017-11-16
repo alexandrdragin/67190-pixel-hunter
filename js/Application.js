@@ -36,7 +36,6 @@ const routes = {
 export default class Application {
 
   static init() {
-    intro.init();
     const onHashChange = () => {
       const hashValue = location.hash.replace(`#`, ``);
       const [id, data] = hashValue.split(`?`);
@@ -47,6 +46,7 @@ export default class Application {
   }
 
   static changeHash(id, data) {
+
     const controller = routes[id];
 
     if (controller) {

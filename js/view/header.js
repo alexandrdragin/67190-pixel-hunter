@@ -56,10 +56,4 @@ export default class Header extends AbstractView {
       </header>
     `;
   }
-
-  bindHandlers() {
-    this.element.querySelector(`.header__back`).addEventListener(`click`, () => {
-      Application.showGreeting();
-    });
-  }
 }

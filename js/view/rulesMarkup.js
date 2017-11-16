@@ -11,7 +11,7 @@ export default class Rules extends AbstractView {
     this.header = new Header(questsData);
   }
 
-  getMarkup() {
+  get getMarkup() {
 
     const rulesMap = {
       rulesTitle: `Правила`,
@@ -53,6 +53,11 @@ export default class Rules extends AbstractView {
         this.rulesSubmit.setAttribute(`disabled`, ``);
       }
     };
+
+    this.element.querySelector(`.rules__button`).onclick = (evt) => {
+        evt.preventDefault();
+        this.onClick();
+      };
   }
 
   clearHandlers() {

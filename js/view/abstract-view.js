@@ -19,7 +19,7 @@ export default class AbstractView {
 
   get element() {
     if (!this._element) {
-      this._element = getElementFromTemplate(this.getMarkup());
+      this._element = getElementFromTemplate(this.getMarkup);
       this.bindHandlers();
     }
 
