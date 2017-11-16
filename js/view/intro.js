@@ -9,9 +9,7 @@ class Intro {
 
   init() {
     draw(this.view);
-    this.view.onClick = () => {
-      Application.showGreeting();
-    };
+    this.view.onClick();
   }
 }
 

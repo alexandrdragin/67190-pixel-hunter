@@ -54,7 +54,6 @@ class GamePresenter {
   }
 
   nextTask() {
-
     this.createScreenGame();
     this.model.nextTask();
     this.startTimer();
