@@ -1,5 +1,4 @@
 import draw from '../utils/draw.js';
-import Application from '../Application';
 import MarkUp from './introMarkup';
 
 class Intro {

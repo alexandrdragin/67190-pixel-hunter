@@ -55,9 +55,9 @@ export default class Rules extends AbstractView {
     };
 
     this.element.querySelector(`.rules__button`).onclick = (evt) => {
-        evt.preventDefault();
-        this.onClick();
-      };
+      evt.preventDefault();
+      this.onClick();
+    };
   }
 
   clearHandlers() {
